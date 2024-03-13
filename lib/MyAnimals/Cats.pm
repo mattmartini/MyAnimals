@@ -9,7 +9,7 @@ our $VERSION = '0.01';
 use Exporter qw( import );
 
 our @EXPORT_OK = qw( meow );
-our %EXPORT_TAGS = ( ALL => \@EXPORT_OK );  # Optional.
+our %EXPORT_TAGS = ( all => \@EXPORT_OK );  # Optional.
 
 sub meow { return "meow\n"; }
 

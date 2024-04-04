@@ -20,7 +20,8 @@ sub import {
     for (@_) {
         if (/^::/) {
             push @pkgs, __PACKAGE__ . $_;
-        } else {
+        }
+        else {
             push @rest, $_;
         }
     }
@@ -31,7 +32,7 @@ sub import {
 
         my $exports = do { no strict "refs"; \@{ $pkg . "::EXPORT_OK" } };
         $pkg->import(@$exports);
-        @EXPORT = uniq @EXPORT, @$exports;
+        @EXPORT    = uniq @EXPORT,    @$exports;
         @EXPORT_OK = uniq @EXPORT_OK, @$exports;
     }
 

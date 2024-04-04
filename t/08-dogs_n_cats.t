@@ -10,7 +10,7 @@ use open qw(:std :utf8);
 use Test2::V0;
 use lib 'lib';
 
-use MyAnimals qw(::Cats);
+use MyAnimals       qw(::Cats);
 use MyAnimals::Dogs qw(woof);
 
 plan tests => 2;

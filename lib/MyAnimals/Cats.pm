@@ -1,12 +1,11 @@
 package MyAnimals::Cats;
 
-use 5.036;
-use strict;
-use warnings;
-
-our $VERSION = '0.01';
+use lib 'lib';
+use MyAnimals::Syntax;
 
 use Exporter qw( import );
+
+our $VERSION = '0.01';
 
 our @EXPORT_OK   = qw( meow purr );
 our %EXPORT_TAGS = ( all => \@EXPORT_OK );    # Optional.

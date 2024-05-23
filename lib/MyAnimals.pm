@@ -3,6 +3,19 @@ package MyAnimals;
 use 5.036;
 use strict;
 use warnings;
+use Carp;
+use lib 'lib';
+
+=encoding utf-8
+=head1 NAME
+
+MyAnimals - Test of interface design where :: denotes a package to load
+
+=head1 VERSION
+
+Version 0.01
+
+=cut
 
 our $VERSION = '0.01';
 
@@ -15,9 +28,10 @@ our %EXPORT_TAGS = ( all => \@EXPORT_OK );    # Optional.
 
 sub import {
     my $class = shift;
+    my (@packages) = @_;
 
     my ( @pkgs, @rest );
-    for (@_) {
+    for (@packages) {
         if (/^::/) {
             push @pkgs, __PACKAGE__ . $_;
         }
@@ -40,9 +54,6 @@ sub import {
     goto &Exporter::import;
 }
 
-=head1 NAME
-
-MyAnimals - Test of interface design where :: denotes a package to load
 
 =cut
 
